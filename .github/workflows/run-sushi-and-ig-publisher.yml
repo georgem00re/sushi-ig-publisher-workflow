@@ -8,15 +8,28 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run SUSHI and IG Publisher
-        uses: qligier/fhir-ig-action@v0.3.0
-        working-directory: ./ExampleIG
+      - name: Set up Node.js for SUSHI
+        uses: actions/setup-node@v4
         with:
-          ig-publisher: "1.6.25"
-          sushi: "3.11.1"
+          node-version: 20
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Generate Resources with SUSHI
+        working-directory: ExampleIG
+        run: sushi .
+
+      - name: Download the IG Publisher
+        run: |
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+
+      - name: Run the IG Publisher
+        run: |
+          java -jar publisher.jar -ig ./ExampleIG/ig.ini -no-sushi
 
       - name: Persist Artifacts
         uses: actions/upload-artifact@v4.6.0
         with:
-          name: fsh-generated
-          path: ExampleIG/output
+          name: output
+          path: ./ExampleIG/output
