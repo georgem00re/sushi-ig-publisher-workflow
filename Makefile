@@ -4,3 +4,6 @@ generate-fhir-resources:
 
 install-ig-publisher:
 	curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o ig-publisher.jar
+
+run-ig-publisher:
+	java -jar ig-publisher.jar -ig ExampleIG -no-sushi
