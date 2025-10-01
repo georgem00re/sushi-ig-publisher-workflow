@@ -9,6 +9,7 @@ install-ig-publisher:
 install-ruby:
 	brew install ruby
 
+# Note: Bundler requires Ruby version >= 3.2.0.
 verify-ruby-installation:
 	ruby --version
 
