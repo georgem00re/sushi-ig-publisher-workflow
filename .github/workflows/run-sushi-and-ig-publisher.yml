@@ -1,0 +1,22 @@
+name: run-sushi-and-ig-publisher
+on:
+  workflow_call:
+jobs:
+  run-sushi-and-ig-publisher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run SUSHI and IG Publisher
+        uses: qligier/fhir-ig-action@v0.3.0
+        working-directory: ./ExampleIG
+        with:
+          ig-publisher: "1.6.25"
+          sushi: "3.11.1"
+
+      - name: Persist Artifacts
+        uses: actions/upload-artifact@v4.6.0
+        with:
+          name: fsh-generated
+          path: ExampleIG/output

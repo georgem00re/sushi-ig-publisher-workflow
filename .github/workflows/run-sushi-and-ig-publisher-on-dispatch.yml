@@ -1,0 +1,7 @@
+name: run-sushi-and-ig-publisher-on-dispatch
+on:
+  workflow_dispatch:
+jobs:
+  run-sushi-and-push-to-simplifier:
+    name: Run SUSHI and Push to Simplifier
+    uses: ./.github/workflows/run-sushi-and-ig-publisher.yml
