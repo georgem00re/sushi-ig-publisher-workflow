@@ -25,3 +25,6 @@ verify-jekyll-installation:
 
 run-ig-publisher:
 	java -jar ig-publisher.jar -ig ExampleIG -no-sushi
+
+delete-generated-files:
+	cd ExampleIG && rm -rf fsh-generated && rm -rf input-cache && rm -rf output && rm -rf temp && rm -rf template
