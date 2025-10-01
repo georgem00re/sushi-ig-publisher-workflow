@@ -5,4 +5,4 @@ status: draft
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
-FSHOnly: true
+FSHOnly: false
