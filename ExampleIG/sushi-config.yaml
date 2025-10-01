@@ -2,6 +2,7 @@ id: fhir.example
 canonical: http://example.org
 name: ExampleIG
 status: draft
+version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
