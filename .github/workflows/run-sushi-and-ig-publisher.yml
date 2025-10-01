@@ -20,6 +20,15 @@ jobs:
         working-directory: ExampleIG
         run: sushi .
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Install Jekyll and Bundler
+        run: |
+          gem install bundler jekyll
+
       - name: Download the IG Publisher
         run: |
           curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
