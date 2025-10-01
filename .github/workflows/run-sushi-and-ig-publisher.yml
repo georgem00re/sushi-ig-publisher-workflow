@@ -26,7 +26,7 @@ jobs:
 
       - name: Run the IG Publisher
         run: |
-          java -jar publisher.jar -ig ./ExampleIG/ig.ini -no-sushi
+          java -jar publisher.jar -ig ExampleIG -no-sushi
 
       - name: Persist Artifacts
         uses: actions/upload-artifact@v4.6.0
