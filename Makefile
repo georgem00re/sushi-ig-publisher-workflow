@@ -17,5 +17,11 @@ verify-ruby-installation:
 install-jekyll-and-bundler:
 	sudo gem install jekyll bundler
 
+verify-bundler-installation:
+	bundler -v
+
+verify-jekyll-installation:
+	jekyll -v
+
 run-ig-publisher:
 	java -jar ig-publisher.jar -ig ExampleIG -no-sushi
