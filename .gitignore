@@ -2,3 +2,7 @@
 fsh-generated/
 .env
 ig-publisher.jar
+input-cache/
+output/
+temp/
+template/
