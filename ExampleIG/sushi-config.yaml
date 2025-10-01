@@ -7,3 +7,11 @@ fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
 FSHOnly: false
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
+instanceOptions:
+  manualSliceOrdering: true
+publisher:
+  name: Example Publisher
+  url: http://example.org/example-publisher
