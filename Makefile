@@ -12,5 +12,9 @@ install-ruby:
 verify-ruby-installation:
 	ruby --version
 
+# The IG Publisher uses Jekyll and Bundler to render the final static website.
+install-jekyll-and-bundler:
+	sudo gem install jekyll bundler
+
 run-ig-publisher:
 	java -jar ig-publisher.jar -ig ExampleIG -no-sushi
